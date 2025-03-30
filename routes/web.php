@@ -16,3 +16,9 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->get('/products', 'ProductController@index');
+$router->get('/products/{id}', 'ProductController@show');
+$router->post('/products/create', 'ProductController@create');
+$router->put('/products/update/{id}', 'ProductController@update');
+$router->delete('/products/delete/{id}', 'ProductController@destroy');
